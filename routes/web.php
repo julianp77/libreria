@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Auth::routes();
+Auth::routes(['reset'=>false]);
+
+
 
 Route::resource('libros',App\Http\Controllers\LibroController::class)->middleware('auth');
 
